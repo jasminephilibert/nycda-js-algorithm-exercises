@@ -2,8 +2,23 @@
  * Determines whether the given number is a prime number, i.e. it is not divisible by any integers other than 1 and itself.
  * Returns true or false.
  */
-function isPrime() {
+function isPrime(num) {
+  if (num === 2) {
+    return true;
+  } else if (num > 1) {
+    for (var i = 2; i < num; i++) {
 
+      if (num % i !== 0) {
+        return true;
+      } else if (num === i * i) {
+        return false
+      } else {
+        return false;
+      }
+    }
+  } else {
+    return false;
+  }
 }
 
 describe('isPrime', function() {
